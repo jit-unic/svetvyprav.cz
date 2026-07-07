@@ -22,8 +22,25 @@
   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
   })(window,document,'script','dataLayer','GTM-56Z89R3H');</script>
   <!-- End Google Tag Manager -->
+  <!-- Meta Pixel (výchozí souhlas odepřen, aktivuje se přes cookie lištu) -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('consent', 'revoke');
+    fbq('init', '1541113114212456');
+    fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none" alt=""
+    src="https://www.facebook.com/tr?id=1541113114212456&ev=PageView&noscript=1" /></noscript>
+  <!-- End Meta Pixel -->
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Obchodni Podminky — Matematické výpravy</title>
+<title>Obchodní podmínky | Matematické výpravy</title>
 <meta name="description" content="Matematické výpravy — dětské matematické pracovní listy s příběhem. Piráti nebo jednorožci. Okamžité stažení PDF.">
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&amp;family=Baloo+2:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
@@ -33,13 +50,13 @@ body{margin:0;background:#FFF6EC;}
   <meta property="og:type" content="website">
   <meta property="og:title" content="Obchodní podmínky | Matematické výpravy">
   <meta property="og:description" content="Obchodní podmínky prodeje digitálních produktů.">
-  <meta property="og:image" content="https://svetvyprav.cz/assets/pirati-hero.png">
+  <meta property="og:image" content="https://svetvyprav.cz/assets/pirati-hero.jpg">
   <meta property="og:url" content="https://svetvyprav.cz/obchodni-podminky.html">
   <meta property="og:locale" content="cs_CZ">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Obchodní podmínky | Matematické výpravy">
   <meta name="twitter:description" content="Obchodní podmínky prodeje digitálních produktů.">
-  <meta name="twitter:image" content="https://svetvyprav.cz/assets/pirati-hero.png">
+  <meta name="twitter:image" content="https://svetvyprav.cz/assets/pirati-hero.jpg">
 </head>
 <body>
   <!-- Google Tag Manager (noscript) -->
@@ -47,41 +64,90 @@ body{margin:0;background:#FFF6EC;}
   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
   <!-- Cookie consent banner -->
-  <div id="cookie-banner" style="display:none;position:fixed;bottom:0;left:0;right:0;z-index:9999;background:#4A2E3E;color:#fff;padding:18px 24px;display:flex;flex-wrap:wrap;align-items:center;gap:12px;justify-content:space-between;font-family:'Nunito',sans-serif;font-size:0.88rem;line-height:1.5;">
-    <span style="flex:1;min-width:220px;">Tento web používá analytické cookies (Google Analytics) pro zlepšení obsahu. <a href="gdpr.html" style="color:#F5A623;font-weight:700;">Více info</a></span>
-    <div style="display:flex;gap:10px;flex-shrink:0;">
-      <button id="cookie-reject" style="background:transparent;border:1.5px solid rgba(255,255,255,0.4);color:#fff;font-family:inherit;font-weight:700;font-size:0.85rem;padding:9px 18px;border-radius:9999px;cursor:pointer;">Odmítnout</button>
-      <button id="cookie-accept" style="background:#F5A623;border:none;color:#4A2E3E;font-family:inherit;font-weight:800;font-size:0.85rem;padding:9px 18px;border-radius:9999px;cursor:pointer;">Přijmout analytics</button>
+  <div id="cookie-banner" style="display:none;position:fixed;bottom:0;left:0;right:0;z-index:9999;background:#4A2E3E;color:#fff;padding:18px 24px;font-family:'Nunito',sans-serif;font-size:0.88rem;line-height:1.5;">
+    <div style="max-width:1100px;margin:0 auto;display:flex;flex-wrap:wrap;align-items:center;gap:12px;justify-content:space-between;">
+      <span style="flex:1;min-width:220px;">Používáme cookies pro nezbytný provoz webu, analytiku (Google Analytics) a marketing (Meta Pixel). <a href="gdpr.html" style="color:#F5A623;font-weight:700;">Více info</a></span>
+      <div style="display:flex;gap:10px;flex-shrink:0;flex-wrap:wrap;">
+        <button id="cookie-reject" style="background:transparent;border:1.5px solid rgba(255,255,255,0.4);color:#fff;font-family:inherit;font-weight:700;font-size:0.85rem;padding:9px 18px;border-radius:9999px;cursor:pointer;">Odmítnout vše</button>
+        <button id="cookie-show-prefs" style="background:transparent;border:1.5px solid rgba(255,255,255,0.4);color:#fff;font-family:inherit;font-weight:700;font-size:0.85rem;padding:9px 18px;border-radius:9999px;cursor:pointer;">Nastavit předvolby</button>
+        <button id="cookie-accept" style="background:#F5A623;border:none;color:#4A2E3E;font-family:inherit;font-weight:800;font-size:0.85rem;padding:9px 18px;border-radius:9999px;cursor:pointer;">Přijmout vše</button>
+      </div>
+    </div>
+    <div id="cookie-prefs" style="display:none;max-width:1100px;margin:16px auto 0;padding-top:16px;border-top:1px solid rgba(255,255,255,0.15);flex-direction:column;gap:14px;">
+      <label style="display:flex;align-items:center;justify-content:space-between;gap:16px;">
+        <span><strong>Nezbytné</strong> — vždy aktivní, zajišťují základní funkčnost webu.</span>
+        <input type="checkbox" checked disabled style="width:18px;height:18px;flex-shrink:0;">
+      </label>
+      <label style="display:flex;align-items:center;justify-content:space-between;gap:16px;">
+        <span><strong>Analytika</strong> — Google Analytics, pomáhá nám chápat návštěvnost.</span>
+        <input type="checkbox" id="cookie-analytics-toggle" style="width:18px;height:18px;flex-shrink:0;">
+      </label>
+      <label style="display:flex;align-items:center;justify-content:space-between;gap:16px;">
+        <span><strong>Marketing</strong> — Meta Pixel, pro cílení a měření reklamy na Facebooku/Instagramu.</span>
+        <input type="checkbox" id="cookie-marketing-toggle" style="width:18px;height:18px;flex-shrink:0;">
+      </label>
+      <button id="cookie-save-prefs" style="align-self:flex-start;background:#F5A623;border:none;color:#4A2E3E;font-family:inherit;font-weight:800;font-size:0.85rem;padding:9px 20px;border-radius:9999px;cursor:pointer;">Uložit předvolby</button>
     </div>
   </div>
   <script>
     (function(){
+      var STORAGE_KEY = 'cookie_consent_v2';
       var banner = document.getElementById('cookie-banner');
-      var consent = localStorage.getItem('cookie_consent');
-      if (!consent) { banner.style.display = 'flex'; }
-      if (consent === 'granted') { grantConsent(); }
+      var prefs = document.getElementById('cookie-prefs');
+      var analyticsToggle = document.getElementById('cookie-analytics-toggle');
+      var marketingToggle = document.getElementById('cookie-marketing-toggle');
 
-      document.getElementById('cookie-accept').addEventListener('click', function(){
-        localStorage.setItem('cookie_consent', 'granted');
-        banner.style.display = 'none';
-        grantConsent();
-      });
-      document.getElementById('cookie-reject').addEventListener('click', function(){
-        localStorage.setItem('cookie_consent', 'denied');
-        banner.style.display = 'none';
-      });
+      function getConsent(){
+        try { return JSON.parse(localStorage.getItem(STORAGE_KEY)); } catch(e){ return null; }
+      }
 
-      function grantConsent(){
+      function applyConsent(consent){
         if(typeof gtag === 'function'){
           gtag('consent', 'update', {
-            analytics_storage: 'granted',
-            ad_storage: 'granted',
-            ad_user_data: 'granted',
-            ad_personalization: 'granted'
+            analytics_storage: consent.analytics ? 'granted' : 'denied',
+            ad_storage: consent.marketing ? 'granted' : 'denied',
+            ad_user_data: consent.marketing ? 'granted' : 'denied',
+            ad_personalization: consent.marketing ? 'granted' : 'denied'
           });
-          dataLayer.push({event: 'consent_granted'});
+          dataLayer.push({event: 'consent_updated', analytics_consent: consent.analytics, marketing_consent: consent.marketing});
+        }
+        if(typeof fbq === 'function'){
+          fbq('consent', consent.marketing ? 'grant' : 'revoke');
         }
       }
+
+      function saveConsent(consent){
+        consent.ts = new Date().toISOString();
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(consent));
+        applyConsent(consent);
+        banner.style.display = 'none';
+        prefs.style.display = 'none';
+      }
+
+      var existing = getConsent();
+      if (existing) { applyConsent(existing); } else { banner.style.display = 'block'; }
+
+      document.getElementById('cookie-accept').addEventListener('click', function(){
+        saveConsent({analytics: true, marketing: true});
+      });
+      document.getElementById('cookie-reject').addEventListener('click', function(){
+        saveConsent({analytics: false, marketing: false});
+      });
+      document.getElementById('cookie-show-prefs').addEventListener('click', function(){
+        var c = getConsent();
+        if (c) { analyticsToggle.checked = !!c.analytics; marketingToggle.checked = !!c.marketing; }
+        prefs.style.display = prefs.style.display === 'none' ? 'flex' : 'none';
+      });
+      document.getElementById('cookie-save-prefs').addEventListener('click', function(){
+        saveConsent({analytics: analyticsToggle.checked, marketing: marketingToggle.checked});
+      });
+
+      window.openCookieSettings = function(e){
+        if (e) e.preventDefault();
+        var c = getConsent();
+        if (c) { analyticsToggle.checked = !!c.analytics; marketingToggle.checked = !!c.marketing; prefs.style.display = 'flex'; }
+        banner.style.display = 'block';
+      };
     })();
   </script>
 <div style="font-family:'Nunito',system-ui,sans-serif;color:#4A2E3E;">
@@ -91,50 +157,78 @@ body{margin:0;background:#FFF6EC;}
 </div>
 </nav>
 <main style="max-width:760px;margin:0 auto;padding:56px 24px 100px;">
-<div style="background:#FDECD5;border:1.5px solid #F0C878;border-radius:14px;padding:18px 22px;margin-bottom:40px;font-size:0.88rem;line-height:1.6;color:#7A3E0E;">
-    ⚠️ Toto je vzorový text s placeholdery <code>[…]</code>. Před zveřejněním jej nechte zkontrolovat právníkem a doplňte reálné údaje o vašem podnikání.
-  </div>
-<h1 style="font-family:'Baloo 2',sans-serif;font-weight:700;font-size:clamp(1.7rem,3.4vw,2.3rem);margin:0 0 8px;color:#4A2E3E;">Obchodní podmínky</h1>
-<p style="font-size:0.9rem;color:#8A7A6E;margin:0 0 40px;">Účinné od [DATUM]. Prodávající: <strong>[Jméno a příjmení / Název společnosti]</strong>, IČO: [IČO], se sídlem [adresa].</p>
+<h1 style="font-family:'Baloo 2',sans-serif;font-weight:700;font-size:clamp(1.7rem,3.4vw,2.3rem);margin:0 0 8px;color:#4A2E3E;">Všeobecné obchodní podmínky (VOP)</h1>
+<p style="font-size:0.95rem;color:#6B5A4A;margin:0 0 28px;">pro poskytování digitálního obsahu</p>
+<div style="background:#fff;border:1.5px solid #F0CE98;border-radius:16px;padding:22px 24px;margin-bottom:40px;font-size:0.94rem;line-height:1.75;color:#4A2E3E;">
+<p style="margin:0 0 6px;font-weight:800;color:#B8336A;">Poskytovatel</p>
+<p style="margin:0;">Jméno a příjmení: Jitka Podroužková<br>
+Místo podnikání / sídlo: Korunní 2569/108, 101 00 Praha 10 – Vinohrady<br>
+IČO: 05936799 (neplátce DPH)<br>
+Zápis v registru: zapsaná v živnostenském rejstříku vedeném Úřadem městské části Praha 10<br>
+E-mail: <a href="mailto:jitka@svetvyprav.cz" style="color:#B8336A;font-weight:700;">jitka@svetvyprav.cz</a><br>
+Telefon: +420 778 474 502</p>
+<p style="margin:10px 0 0;font-style:italic;color:#8A7A6E;">(dále jen „Poskytovatel“)</p>
+</div>
 <section style="margin-bottom:32px;">
-<h2 style="font-family:'Baloo 2',sans-serif;font-weight:700;font-size:1.25rem;color:#B8336A;margin:0 0 12px;">1. Úvodní ustanovení</h2>
-<p style="font-size:1rem;line-height:1.7;color:#4A2E3E;margin:0;">Tyto obchodní podmínky upravují vzájemná práva a povinnosti prodávajícího a kupujícího vzniklé v souvislosti s nákupem digitálního obsahu (PDF pracovních listů „Matematické výpravy“) prostřednictvím tohoto webu.</p>
+<h2 style="font-family:'Baloo 2',sans-serif;font-weight:700;font-size:1.25rem;color:#B8336A;margin:0 0 12px;">I. Distanční smlouvy</h2>
+<p style="font-size:1rem;line-height:1.7;color:#4A2E3E;margin:0 0 10px;">Tyto všeobecné obchodní podmínky upravují vzájemná práva a povinnosti fyzické osoby, která uzavírá smlouvu o poskytování digitálního obsahu jako spotřebitel, nebo fyzické či právnické osoby v rámci své podnikatelské činnosti (dále jen „zákazník“) prostřednictvím webových stránek <a href="https://www.svetvyprav.cz" style="color:#B8336A;font-weight:700;">www.svetvyprav.cz</a> a jedná se tedy o distanční smlouvy a pro ně stanovené obchodní podmínky.</p>
+<p style="font-size:1rem;line-height:1.7;color:#4A2E3E;margin:0 0 10px;">Zákazník při smluvním vztahu s Poskytovatelem souhlasí s použitím komunikačních prostředků na dálku při uzavírání distanční smlouvy.</p>
+<p style="font-size:1rem;line-height:1.7;color:#4A2E3E;margin:0;">Poskytovatel neúčtuje zákazníkům jakékoliv další poplatky za použití komunikačních prostředků pro uzavření distanční smlouvy nad rámec základní sazby, kterou zákazník platí za používání těchto komunikačních prostředků.</p>
 </section>
 <section style="margin-bottom:32px;">
-<h2 style="font-family:'Baloo 2',sans-serif;font-weight:700;font-size:1.25rem;color:#B8336A;margin:0 0 12px;">2. Objednávka a uzavření smlouvy</h2>
-<p style="font-size:1rem;line-height:1.7;color:#4A2E3E;margin:0;">Kupní smlouva vzniká odesláním objednávky přes objednávkový formulář a jejím potvrzením ze strany prodávajícího. Objednávka je zpracována prostřednictvím platební brány SimpleShop.</p>
+<h2 style="font-family:'Baloo 2',sans-serif;font-weight:700;font-size:1.25rem;color:#B8336A;margin:0 0 12px;">II. Objednávka a uzavření smlouvy</h2>
+<p style="font-size:1rem;line-height:1.7;color:#4A2E3E;margin:0 0 10px;">Smluvní vztah (uzavření distanční smlouvy) mezi Poskytovatelem a jeho zákazníky vzniká potvrzením doručené objednávky, která je Poskytovatelem zaslána zákazníkovi na jeho e-mailovou adresu prostřednictvím prodejního systému SimpleShop, nesjednají-li smluvní strany jinak.</p>
+<p style="font-size:1rem;line-height:1.7;color:#4A2E3E;margin:0 0 10px;">Uvede-li zákazník v objednávce své IČO a fakturační údaje, a tedy zamýšlí využít produkty Poskytovatele v rámci své podnikatelské činnosti, nebude na něj pohlíženo v rámci smluvního vztahu jako na spotřebitele a jeho smluvní vztah s Poskytovatelem bude posuzován jako smluvní vztah dvou podnikajících osob; v opačném případě se má za to, že zákazník je v postavení spotřebitele a na vztah s Poskytovatelem se uplatní ujednání zákona č. 634/1992 Sb., o ochraně spotřebitele.</p>
+<p style="font-size:1rem;line-height:1.7;color:#4A2E3E;margin:0 0 10px;">Webové stránky Poskytovatele obsahují seznam a popis digitálního obsahu včetně uvedení ceny.</p>
+<p style="font-size:1rem;line-height:1.7;color:#4A2E3E;margin:0 0 10px;">Pro objednání zákazník provede příslušnou volbu na webové stránce, vyplní objednávkový formulář SimpleShop a svůj nákup stvrdí vyjádřením souhlasu s upozorněním na povinnost platby.</p>
+<p style="font-size:1rem;line-height:1.7;color:#4A2E3E;margin:0;">Poskytovatel bez zbytečného odkladu po obdržení objednávky zákazníkovi potvrdí přijetí objednávky e-mailem.</p>
 </section>
 <section style="margin-bottom:32px;">
-<h2 style="font-family:'Baloo 2',sans-serif;font-weight:700;font-size:1.25rem;color:#B8336A;margin:0 0 12px;">3. Cena a platební podmínky</h2>
-<p style="font-size:1rem;line-height:1.7;color:#4A2E3E;margin:0;">Ceny produktů jsou uvedeny na webu včetně všech daní a poplatků. Platbu lze provést platební kartou nebo bankovním převodem. Produkt je zpřístupněn ke stažení po připsání platby.</p>
+<h2 style="font-family:'Baloo 2',sans-serif;font-weight:700;font-size:1.25rem;color:#B8336A;margin:0 0 12px;">III. Cena a platební podmínky</h2>
+<p style="font-size:1rem;line-height:1.7;color:#4A2E3E;margin:0 0 10px;">Zákazník získává přístup k produktům po zaplacení plné stanovené ceny.</p>
+<p style="font-size:1rem;line-height:1.7;color:#4A2E3E;margin:0 0 10px;">Stanovuje se lhůta splatnosti pro bankovní převod v délce trvání 7 dnů od vystavení objednávky.</p>
+<p style="font-size:1rem;line-height:1.7;color:#4A2E3E;margin:0 0 10px;">Daňový doklad – fakturu Poskytovatel zašle v elektronické podobě na e-mailovou adresu zákazníka automaticky po uhrazení ceny.</p>
+<p style="font-size:1rem;line-height:1.7;color:#4A2E3E;margin:0 0 10px;">Způsob platby (bankovní převod) si zákazník vybere při vyplňování objednávkového formuláře. Platba je úspěšně dokončena zobrazením potvrzující zprávy a jejím zasláním e-mailem.</p>
+<p style="font-size:1rem;line-height:1.7;color:#4A2E3E;margin:0;">Poskytovatel přijímá úhradu svých produktů v českých korunách.</p>
 </section>
 <section style="margin-bottom:32px;">
-<h2 style="font-family:'Baloo 2',sans-serif;font-weight:700;font-size:1.25rem;color:#B8336A;margin:0 0 12px;">4. Dodání digitálního obsahu</h2>
-<p style="font-size:1rem;line-height:1.7;color:#4A2E3E;margin:0;">Produkt je dodáván v elektronické podobě (PDF) formou odkazu ke stažení zaslaného na e-mail uvedený v objednávce, zpravidla ihned po připsání platby.</p>
+<h2 style="font-family:'Baloo 2',sans-serif;font-weight:700;font-size:1.25rem;color:#B8336A;margin:0 0 12px;">IV. Dodací podmínky</h2>
+<p style="font-size:1rem;line-height:1.7;color:#4A2E3E;margin:0 0 10px;"><strong>Materiály ke stažení či zhlédnutí (procvičovací listy a digitální obsah):</strong> V případě produktů, které se stahují z webového prostředí (zejména PDF soubory, procvičovací listy apod.), zašle Poskytovatel prostřednictvím systému SimpleShop zákazníkům odkazy ke stažení na e-mailovou adresu zadanou v objednávce, a to bezodkladně po úspěšném spárování platby na bankovní účet Poskytovatele.</p>
+<p style="font-size:1rem;line-height:1.7;color:#4A2E3E;margin:0 0 10px;">Poskytovatel si vyhrazuje právo poskytovat produkty pouze po dobu stanovenou v popisu konkrétního produktu.</p>
+<p style="font-size:1rem;line-height:1.7;color:#4A2E3E;margin:0 0 10px;">Těmito obchodními podmínkami se řídí také právní poměry mezi Poskytovatelem a zákazníkem, pokud Poskytovatel poskytne digitální obsah za osobní údaje namísto odměny, tzv. „magnet“ (a Poskytovatel poskytnuté osobní údaje zpracovává i pro jiné účely než poskytnutí digitálního obsahu nebo splnění svých zákonných povinností).</p>
+<p style="font-size:1rem;line-height:1.7;color:#4A2E3E;margin:0;">Poskytovatel zpřístupní zákazníkovi zakoupený digitální obsah v nejnovější verzi dostupné v době uzavření smlouvy. Poskytovatel neposkytuje automatické průběžné aktualizace zakoupeného digitálního obsahu, pokud není u konkrétního produktu výslovně uvedeno jinak.</p>
 </section>
 <section style="margin-bottom:32px;">
-<h2 style="font-family:'Baloo 2',sans-serif;font-weight:700;font-size:1.25rem;color:#B8336A;margin:0 0 12px;">5. Odstoupení od smlouvy</h2>
-<p style="font-size:1rem;line-height:1.7;color:#4A2E3E;margin:0 0 10px;">Vzhledem k tomu, že se jedná o digitální obsah nedodávaný na hmotném nosiči, uděluje kupující při dokončení objednávky výslovný souhlas se zahájením plnění před uplynutím lhůty pro odstoupení od smlouvy. Podle § 1837 písm. l) občanského zákoníku tím kupující bere na vědomí, že mu po zahájení stahování obsahu nevzniká právo na odstoupení od smlouvy.</p>
-<p style="font-size:1rem;line-height:1.7;color:#4A2E3E;margin:0;">I přesto nabízíme <strong>14denní garanci vrácení peněz</strong> — v případě nespokojenosti nás kontaktujte na [e-mail].</p>
+<h2 style="font-family:'Baloo 2',sans-serif;font-weight:700;font-size:1.25rem;color:#B8336A;margin:0 0 12px;">V. Odstoupení od smlouvy</h2>
+<p style="font-size:1rem;line-height:1.7;color:#4A2E3E;margin:0 0 10px;">Zákazník v postavení spotřebitele má obecně u smluv uzavřených distančním způsobem dle § 1829 občanského zákoníku právo od smlouvy odstoupit ve lhůtě 14 dní ode dne uzavření smlouvy. Toto právo je u zákazníka v postavení podnikatele zcela vyloučeno.</p>
+<p style="font-size:1rem;line-height:1.7;color:#4A2E3E;margin:0 0 10px;"><strong>Upozornění na výjimku z odstoupení od smlouvy u digitálního obsahu:</strong> Poskytovatel výslovně informuje zákazníka a zákazník odesláním objednávky uděluje svůj výslovný souhlas s tím, že digitální obsah (odkaz ke stažení procvičovacích listů) mu bude zpřístupněn bezodkladně po zaplacení ceny (spárování platby). V takovém případě zákazník ztrácí právo na odstoupení od smlouvy ve 14denní lhůtě od uzavření smlouvy o poskytnutí digitálního obsahu bez udání důvodu v souladu s ustanovením § 1837 písm. l) občanského zákoníku. Z tohoto důvodu je u digitálního obsahu doručovaného ihned po zaplacení vyloučena možnost požadovat vrácení celé uhrazené ceny z titulu bezdůvodného 14denního odstoupení.</p>
+<p style="font-size:1rem;line-height:1.7;color:#4A2E3E;margin:0 0 10px;">Zákazník v postavení spotřebitele je oprávněn od smlouvy o poskytnutí digitálního obsahu odstoupit v případě, nedodá-li Poskytovatel digitální obsah bezodkladně po jeho zaplacení (spárování platby) nebo v dodatečné lhůtě stanovené zákazníkem.</p>
+<p style="font-size:1rem;line-height:1.7;color:#4A2E3E;margin:0;">Poskytovatel je oprávněn od smlouvy odstoupit, jestliže není možné z objektivních důvodů digitální obsah za původních podmínek poskytnout nebo se plnění stane objektivně nemožným. V případě řádného odstoupení ze strany Poskytovatele vrátí Poskytovatel zákazníkovi přijaté peněžní prostředky do 14 dnů.</p>
 </section>
 <section style="margin-bottom:32px;">
-<h2 style="font-family:'Baloo 2',sans-serif;font-weight:700;font-size:1.25rem;color:#B8336A;margin:0 0 12px;">6. Reklamace</h2>
-<p style="font-size:1rem;line-height:1.7;color:#4A2E3E;margin:0;">V případě technických potíží se stažením nebo otevřením souboru nás kontaktujte na [e-mail] — vadu odstraníme nebo poskytneme nový odkaz ke stažení.</p>
+<h2 style="font-family:'Baloo 2',sans-serif;font-weight:700;font-size:1.25rem;color:#B8336A;margin:0 0 12px;">VI. Odpovědnost za vady a pravidla pro reklamaci</h2>
+<p style="font-size:1rem;line-height:1.7;color:#4A2E3E;margin:0 0 10px;">Poskytovatel odpovídá za to, že digitální obsah při převzetí nevykazuje vady a je v souladu se smlouvou po celou dobu jeho případného trvalého poskytování. Práva z vadného plnění se řídí platnými právními předpisy, zejména ust. § 1914 – 1925 a § 2085a až § 2085n občanského zákoníku.</p>
+<p style="font-size:1rem;line-height:1.7;color:#4A2E3E;margin:0 0 10px;">Vadu je povinen zákazník uplatnit u Poskytovatele e-mailem bezodkladně po jejím zjištění na adresu <a href="mailto:jitka@svetvyprav.cz" style="color:#B8336A;font-weight:700;">jitka@svetvyprav.cz</a>.</p>
+<p style="font-size:1rem;line-height:1.7;color:#4A2E3E;margin:0 0 10px;"><strong>Lhůta pro vytknutí vady:</strong> Podnikatel: vadu lze vytknout při převzetí plnění. Spotřebitel: u digitálního obsahu poskytovaného jednorázově odpovídá Poskytovatel za vady, které se projeví do dvou let (24 měsíců) od poskytnutí. Pokud se vada projeví po uplynutí 12 měsíců od převzetí, je zákazník povinen prokázat, že vada existovala již při převzetí.</p>
+<p style="font-size:1rem;line-height:1.7;color:#4A2E3E;margin:0 0 10px;">Má-li digitální obsah vadu, může zákazník požadovat její odstranění (např. zaslání funkčního odkazu či opraveného PDF), přiměřenou slevu nebo, jedná-li se o podstatné porušení smlouvy, od smlouvy odstoupit. Od smlouvy nelze odstoupit, jedná-li se o vadu nevýznamnou.</p>
+<p style="font-size:1rem;line-height:1.7;color:#4A2E3E;margin:0;">Reklamaci vyřídí Poskytovatel bez zbytečného odkladu, nejpozději však do 30 dnů od jejího obdržení, a o výsledku vyrozumí zákazníka e-mailem.</p>
 </section>
 <section style="margin-bottom:32px;">
-<h2 style="font-family:'Baloo 2',sans-serif;font-weight:700;font-size:1.25rem;color:#B8336A;margin:0 0 12px;">7. Ochrana osobních údajů</h2>
-<p style="font-size:1rem;line-height:1.7;color:#4A2E3E;margin:0;">Zpracování osobních údajů se řídí zásadami popsanými na stránce <a href="gdpr.html" style="color:#B8336A;font-weight:700;">Ochrana osobních údajů (GDPR)</a>.</p>
-</section>
-<section>
-<h2 style="font-family:'Baloo 2',sans-serif;font-weight:700;font-size:1.25rem;color:#B8336A;margin:0 0 12px;">8. Závěrečná ustanovení</h2>
-<p style="font-size:1rem;line-height:1.7;color:#4A2E3E;margin:0;">Právní vztahy touto smlouvou výslovně neupravené se řídí občanským zákoníkem a zákonem o ochraně spotřebitele. Prodávající si vyhrazuje právo tyto podmínky měnit; aktuální znění je vždy dostupné na tomto webu.</p>
+<h2 style="font-family:'Baloo 2',sans-serif;font-weight:700;font-size:1.25rem;color:#B8336A;margin:0 0 12px;">VII. Závěrečná ustanovení</h2>
+<p style="font-size:1rem;line-height:1.7;color:#4A2E3E;margin:0 0 10px;">Poskytovatel je autorem a vykonavatelem autorských práv k digitálním produktům (procvičovacím listům), webu a jeho součástem. Jakékoliv šíření, kopírování nebo komerční užití těchto materiálů bez předchozího písemného souhlasu Poskytovatele je přísně zakázáno.</p>
+<p style="font-size:1rem;line-height:1.7;color:#4A2E3E;margin:0 0 10px;">K mimosoudnímu řešení spotřebitelských sporů (ADR) ze smlouvy je příslušná: Česká obchodní inspekce, Ústřední inspektorát – oddělení ADR, Gorazdova 1929/64, Praha 2, 120 00, e-mail: <a href="mailto:adr@coi.cz" style="color:#B8336A;font-weight:700;">adr@coi.cz</a>, web: <a href="https://adr.coi.cz" style="color:#B8336A;font-weight:700;">adr.coi.cz</a>.</p>
+<p style="font-size:1rem;line-height:1.7;color:#4A2E3E;margin:0 0 16px;">Jakékoli hodnocení produktů nebo Poskytovatele (recenze), které bude v budoucnu uvedeno na webových stránkách, pochází výhradně od osob, kterým byl digitální obsah skutečně zpřístupněn, což Poskytovatel ověřuje vazbou na realizované objednávky a e-maily v systému SimpleShop.</p>
+<p style="font-size:0.9rem;color:#8A7A6E;margin:0;">Tyto všeobecné obchodní podmínky nabývají platnosti a účinnosti ke dni 07. 07. 2026.</p>
 </section>
 </main>
 <footer style="background:#3D2244;padding:40px 24px;">
-<div style="max-width:760px;margin:0 auto;display:flex;justify-content:center;gap:24px;flex-wrap:wrap;">
+<div style="max-width:760px;margin:0 auto;">
+<div style="display:flex;justify-content:center;gap:24px;flex-wrap:wrap;margin-bottom:20px;">
 <a href="index.html" style="font-size:0.85rem;color:rgba(255,255,255,0.7);">Zpět na hlavní stránku</a>
 <a href="gdpr.html" style="font-size:0.85rem;color:rgba(255,255,255,0.7);">GDPR</a>
-<a href="#" onclick="{{ openCookieSettings }}" style="font-size:0.85rem;color:rgba(255,255,255,0.7);">Nastavení cookies</a>
+<a href="#" onclick="openCookieSettings(event)" style="font-size:0.85rem;color:rgba(255,255,255,0.7);">Nastavení cookies</a>
+</div>
+<p style="text-align:center;font-size:0.75rem;color:rgba(255,255,255,0.35);margin:0;">© 2026 Jitka Podroužková · IČO 05936799 · Korunní 2569/108, 101 00 Praha 10</p>
 </div>
 </footer>
 

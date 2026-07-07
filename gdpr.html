@@ -22,8 +22,25 @@
   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
   })(window,document,'script','dataLayer','GTM-56Z89R3H');</script>
   <!-- End Google Tag Manager -->
+  <!-- Meta Pixel (výchozí souhlas odepřen, aktivuje se přes cookie lištu) -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('consent', 'revoke');
+    fbq('init', '1541113114212456');
+    fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none" alt=""
+    src="https://www.facebook.com/tr?id=1541113114212456&ev=PageView&noscript=1" /></noscript>
+  <!-- End Meta Pixel -->
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Gdpr — Matematické výpravy</title>
+<title>Ochrana osobních údajů | Matematické výpravy</title>
 <meta name="description" content="Matematické výpravy — dětské matematické pracovní listy s příběhem. Piráti nebo jednorožci. Okamžité stažení PDF.">
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&amp;family=Baloo+2:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
@@ -33,13 +50,13 @@ body{margin:0;background:#FFF6EC;}
   <meta property="og:type" content="website">
   <meta property="og:title" content="Ochrana osobních údajů | Matematické výpravy">
   <meta property="og:description" content="Informace o zpracování osobních údajů.">
-  <meta property="og:image" content="https://svetvyprav.cz/assets/pirati-hero.png">
+  <meta property="og:image" content="https://svetvyprav.cz/assets/pirati-hero.jpg">
   <meta property="og:url" content="https://svetvyprav.cz/gdpr.html">
   <meta property="og:locale" content="cs_CZ">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Ochrana osobních údajů | Matematické výpravy">
   <meta name="twitter:description" content="Informace o zpracování osobních údajů.">
-  <meta name="twitter:image" content="https://svetvyprav.cz/assets/pirati-hero.png">
+  <meta name="twitter:image" content="https://svetvyprav.cz/assets/pirati-hero.jpg">
 </head>
 <body>
   <!-- Google Tag Manager (noscript) -->
@@ -47,41 +64,90 @@ body{margin:0;background:#FFF6EC;}
   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
   <!-- Cookie consent banner -->
-  <div id="cookie-banner" style="display:none;position:fixed;bottom:0;left:0;right:0;z-index:9999;background:#4A2E3E;color:#fff;padding:18px 24px;display:flex;flex-wrap:wrap;align-items:center;gap:12px;justify-content:space-between;font-family:'Nunito',sans-serif;font-size:0.88rem;line-height:1.5;">
-    <span style="flex:1;min-width:220px;">Tento web používá analytické cookies (Google Analytics) pro zlepšení obsahu. <a href="gdpr.html" style="color:#F5A623;font-weight:700;">Více info</a></span>
-    <div style="display:flex;gap:10px;flex-shrink:0;">
-      <button id="cookie-reject" style="background:transparent;border:1.5px solid rgba(255,255,255,0.4);color:#fff;font-family:inherit;font-weight:700;font-size:0.85rem;padding:9px 18px;border-radius:9999px;cursor:pointer;">Odmítnout</button>
-      <button id="cookie-accept" style="background:#F5A623;border:none;color:#4A2E3E;font-family:inherit;font-weight:800;font-size:0.85rem;padding:9px 18px;border-radius:9999px;cursor:pointer;">Přijmout analytics</button>
+  <div id="cookie-banner" style="display:none;position:fixed;bottom:0;left:0;right:0;z-index:9999;background:#4A2E3E;color:#fff;padding:18px 24px;font-family:'Nunito',sans-serif;font-size:0.88rem;line-height:1.5;">
+    <div style="max-width:1100px;margin:0 auto;display:flex;flex-wrap:wrap;align-items:center;gap:12px;justify-content:space-between;">
+      <span style="flex:1;min-width:220px;">Používáme cookies pro nezbytný provoz webu, analytiku (Google Analytics) a marketing (Meta Pixel). <a href="gdpr.html" style="color:#F5A623;font-weight:700;">Více info</a></span>
+      <div style="display:flex;gap:10px;flex-shrink:0;flex-wrap:wrap;">
+        <button id="cookie-reject" style="background:transparent;border:1.5px solid rgba(255,255,255,0.4);color:#fff;font-family:inherit;font-weight:700;font-size:0.85rem;padding:9px 18px;border-radius:9999px;cursor:pointer;">Odmítnout vše</button>
+        <button id="cookie-show-prefs" style="background:transparent;border:1.5px solid rgba(255,255,255,0.4);color:#fff;font-family:inherit;font-weight:700;font-size:0.85rem;padding:9px 18px;border-radius:9999px;cursor:pointer;">Nastavit předvolby</button>
+        <button id="cookie-accept" style="background:#F5A623;border:none;color:#4A2E3E;font-family:inherit;font-weight:800;font-size:0.85rem;padding:9px 18px;border-radius:9999px;cursor:pointer;">Přijmout vše</button>
+      </div>
+    </div>
+    <div id="cookie-prefs" style="display:none;max-width:1100px;margin:16px auto 0;padding-top:16px;border-top:1px solid rgba(255,255,255,0.15);flex-direction:column;gap:14px;">
+      <label style="display:flex;align-items:center;justify-content:space-between;gap:16px;">
+        <span><strong>Nezbytné</strong> — vždy aktivní, zajišťují základní funkčnost webu.</span>
+        <input type="checkbox" checked disabled style="width:18px;height:18px;flex-shrink:0;">
+      </label>
+      <label style="display:flex;align-items:center;justify-content:space-between;gap:16px;">
+        <span><strong>Analytika</strong> — Google Analytics, pomáhá nám chápat návštěvnost.</span>
+        <input type="checkbox" id="cookie-analytics-toggle" style="width:18px;height:18px;flex-shrink:0;">
+      </label>
+      <label style="display:flex;align-items:center;justify-content:space-between;gap:16px;">
+        <span><strong>Marketing</strong> — Meta Pixel, pro cílení a měření reklamy na Facebooku/Instagramu.</span>
+        <input type="checkbox" id="cookie-marketing-toggle" style="width:18px;height:18px;flex-shrink:0;">
+      </label>
+      <button id="cookie-save-prefs" style="align-self:flex-start;background:#F5A623;border:none;color:#4A2E3E;font-family:inherit;font-weight:800;font-size:0.85rem;padding:9px 20px;border-radius:9999px;cursor:pointer;">Uložit předvolby</button>
     </div>
   </div>
   <script>
     (function(){
+      var STORAGE_KEY = 'cookie_consent_v2';
       var banner = document.getElementById('cookie-banner');
-      var consent = localStorage.getItem('cookie_consent');
-      if (!consent) { banner.style.display = 'flex'; }
-      if (consent === 'granted') { grantConsent(); }
+      var prefs = document.getElementById('cookie-prefs');
+      var analyticsToggle = document.getElementById('cookie-analytics-toggle');
+      var marketingToggle = document.getElementById('cookie-marketing-toggle');
 
-      document.getElementById('cookie-accept').addEventListener('click', function(){
-        localStorage.setItem('cookie_consent', 'granted');
-        banner.style.display = 'none';
-        grantConsent();
-      });
-      document.getElementById('cookie-reject').addEventListener('click', function(){
-        localStorage.setItem('cookie_consent', 'denied');
-        banner.style.display = 'none';
-      });
+      function getConsent(){
+        try { return JSON.parse(localStorage.getItem(STORAGE_KEY)); } catch(e){ return null; }
+      }
 
-      function grantConsent(){
+      function applyConsent(consent){
         if(typeof gtag === 'function'){
           gtag('consent', 'update', {
-            analytics_storage: 'granted',
-            ad_storage: 'granted',
-            ad_user_data: 'granted',
-            ad_personalization: 'granted'
+            analytics_storage: consent.analytics ? 'granted' : 'denied',
+            ad_storage: consent.marketing ? 'granted' : 'denied',
+            ad_user_data: consent.marketing ? 'granted' : 'denied',
+            ad_personalization: consent.marketing ? 'granted' : 'denied'
           });
-          dataLayer.push({event: 'consent_granted'});
+          dataLayer.push({event: 'consent_updated', analytics_consent: consent.analytics, marketing_consent: consent.marketing});
+        }
+        if(typeof fbq === 'function'){
+          fbq('consent', consent.marketing ? 'grant' : 'revoke');
         }
       }
+
+      function saveConsent(consent){
+        consent.ts = new Date().toISOString();
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(consent));
+        applyConsent(consent);
+        banner.style.display = 'none';
+        prefs.style.display = 'none';
+      }
+
+      var existing = getConsent();
+      if (existing) { applyConsent(existing); } else { banner.style.display = 'block'; }
+
+      document.getElementById('cookie-accept').addEventListener('click', function(){
+        saveConsent({analytics: true, marketing: true});
+      });
+      document.getElementById('cookie-reject').addEventListener('click', function(){
+        saveConsent({analytics: false, marketing: false});
+      });
+      document.getElementById('cookie-show-prefs').addEventListener('click', function(){
+        var c = getConsent();
+        if (c) { analyticsToggle.checked = !!c.analytics; marketingToggle.checked = !!c.marketing; }
+        prefs.style.display = prefs.style.display === 'none' ? 'flex' : 'none';
+      });
+      document.getElementById('cookie-save-prefs').addEventListener('click', function(){
+        saveConsent({analytics: analyticsToggle.checked, marketing: marketingToggle.checked});
+      });
+
+      window.openCookieSettings = function(e){
+        if (e) e.preventDefault();
+        var c = getConsent();
+        if (c) { analyticsToggle.checked = !!c.analytics; marketingToggle.checked = !!c.marketing; prefs.style.display = 'flex'; }
+        banner.style.display = 'block';
+      };
     })();
   </script>
 <div style="font-family:'Nunito',system-ui,sans-serif;color:#4A2E3E;">
@@ -91,65 +157,70 @@ body{margin:0;background:#FFF6EC;}
 </div>
 </nav>
 <main style="max-width:760px;margin:0 auto;padding:56px 24px 100px;">
-<div style="background:#FDECD5;border:1.5px solid #F0C878;border-radius:14px;padding:18px 22px;margin-bottom:40px;font-size:0.88rem;line-height:1.6;color:#7A3E0E;">
-    ⚠️ Toto je vzorový text s placeholdery <code>[…]</code>. Před zveřejněním jej nechte zkontrolovat právníkem a doplňte reálné údaje o vašem podnikání.
-  </div>
-<h1 style="font-family:'Baloo 2',sans-serif;font-weight:700;font-size:clamp(1.7rem,3.4vw,2.3rem);margin:0 0 8px;color:#4A2E3E;">Ochrana osobních údajů (GDPR)</h1>
-<p style="font-size:0.9rem;color:#8A7A6E;margin:0 0 40px;">Účinné od [DATUM]. Poslední aktualizace [DATUM].</p>
+<h1 style="font-family:'Baloo 2',sans-serif;font-weight:700;font-size:clamp(1.7rem,3.4vw,2.3rem);margin:0 0 8px;color:#4A2E3E;">Zásady ochrany osobních údajů (GDPR)</h1>
+<p style="font-size:0.95rem;color:#6B5A4A;margin:0 0 28px;">pro web <a href="https://www.svetvyprav.cz" style="color:#B8336A;font-weight:700;">www.svetvyprav.cz</a></p>
+<div style="background:#fff;border:1.5px solid #F0CE98;border-radius:16px;padding:22px 24px;margin-bottom:40px;font-size:0.94rem;line-height:1.75;color:#4A2E3E;">
+<p style="margin:0 0 6px;font-weight:800;color:#B8336A;">Správce osobních údajů</p>
+<p style="margin:0;">Jméno a příjmení: Jitka Podroužková<br>
+Místo podnikání / sídlo: Korunní 2569/108, 101 00 Praha 10 – Vinohrady<br>
+IČO: 05936799<br>
+E-mail: <a href="mailto:jitka@svetvyprav.cz" style="color:#B8336A;font-weight:700;">jitka@svetvyprav.cz</a></p>
+<p style="margin:10px 0 0;font-style:italic;color:#8A7A6E;">(dále jen „Správce“)</p>
+</div>
 <section style="margin-bottom:32px;">
-<h2 style="font-family:'Baloo 2',sans-serif;font-weight:700;font-size:1.25rem;color:#B8336A;margin:0 0 12px;">1. Kdo je správcem údajů</h2>
-<p style="font-size:1rem;line-height:1.7;color:#4A2E3E;margin:0;">Správcem osobních údajů je <strong>[Jméno a příjmení / Název společnosti]</strong>, IČO: [IČO], se sídlem [adresa] (dále jen „správce“). Se svým dotazem nebo žádostí týkající se zpracování osobních údajů se můžete obrátit na e-mail <a href="mailto:info@matematickevypravy.cz" style="color:#B8336A;font-weight:700;">[e-mail]</a>.</p>
+<h2 style="font-family:'Baloo 2',sans-serif;font-weight:700;font-size:1.25rem;color:#B8336A;margin:0 0 12px;">I. Základní pojmy a právní rámec</h2>
+<p style="font-size:1rem;line-height:1.7;color:#4A2E3E;margin:0;">Správce při provozu svých webových stránek a prodeji digitálních produktů zpracovává osobní údaje fyzických osob (subjektů údajů) v souladu s Nařízením Evropského parlamentu a Rady (EU) 2016/679 (GDPR) a zákonem č. 110/2019 Sb., o zpracování osobních údajů.</p>
 </section>
 <section style="margin-bottom:32px;">
-<h2 style="font-family:'Baloo 2',sans-serif;font-weight:700;font-size:1.25rem;color:#B8336A;margin:0 0 12px;">2. Jaké údaje zpracováváme</h2>
+<h2 style="font-family:'Baloo 2',sans-serif;font-weight:700;font-size:1.25rem;color:#B8336A;margin:0 0 12px;">II. Účel, rozsah a právní základ zpracování</h2>
+<p style="font-size:1rem;line-height:1.7;color:#4A2E3E;margin:0 0 10px;"><strong>Plnění smlouvy a vyřízení objednávky:</strong> Správce zpracovává údaje (jméno, příjmení, e-mail, adresa, fakturační údaje) za účelem vyřízení vaší objednávky procvičovacích listů přes systém SimpleShop. Právním základem je plnění smlouvy.</p>
+<p style="font-size:1rem;line-height:1.7;color:#4A2E3E;margin:0 0 10px;"><strong>Informační a marketingová činnost (zasílání newsletterů):</strong></p>
+<ul style="font-size:1rem;line-height:1.8;color:#4A2E3E;margin:0 0 10px;padding-left:20px;">
+<li>Zákazníkům: Pokud u Správce nakoupíte, může vám Správce na základě oprávněného zájmu a v souladu se z. č. 480/2004 Sb. zasílat novinky a nabídky e-mailem i bez předchozího výslovného souhlasu, pokud to neodmítnete.</li>
+<li>Nezákazníkům: Na základě vašeho výslovného a dobrovolného souhlasu (např. při stažení materiálu zdarma / magnetu).</li>
+</ul>
+<p style="font-size:1rem;line-height:1.7;color:#4A2E3E;margin:0;"><strong>Provoz webu a analytika (cookies):</strong> Správce na webu užívá soubory cookies a elektronické identifikátory pro analytické a marketingové účely (Google Analytics, Meta Pixel) na základě vašeho souhlasu uděleného prostřednictvím cookies lišty.</p>
+</section>
+<section style="margin-bottom:32px;">
+<h2 style="font-family:'Baloo 2',sans-serif;font-weight:700;font-size:1.25rem;color:#B8336A;margin:0 0 12px;">III. Doba uchování osobních údajů</h2>
+<p style="font-size:1rem;line-height:1.7;color:#4A2E3E;margin:0 0 10px;">Správce uchovává osobní údaje po následující dobu:</p>
 <ul style="font-size:1rem;line-height:1.8;color:#4A2E3E;margin:0;padding-left:20px;">
-<li>Jméno a příjmení</li>
-<li>E-mailová adresa</li>
-<li>Fakturační údaje (v případě vystavení dokladu)</li>
-<li>Údaje o objednávce a platbě (přes platební bránu SimpleShop)</li>
-<li>Technické a analytické údaje o návštěvě webu (viz Cookies níže)</li>
+<li>Údaje na fakturách a účetních dokladech jsou uchovávány po dobu 10 let ze zákona (z důvodu plnění daňových povinností).</li>
+<li>Údaje pro marketingové účely (zasílání e-mailů) jsou uchovávány po dobu 3 let od posledního nákupu či aktivity (otevření e-mailu), nebo do momentu, než zákazník odvolá svůj souhlas či vznese námitku proti zpracování.</li>
 </ul>
 </section>
 <section style="margin-bottom:32px;">
-<h2 style="font-family:'Baloo 2',sans-serif;font-weight:700;font-size:1.25rem;color:#B8336A;margin:0 0 12px;">3. Účel a právní základ zpracování</h2>
-<p style="font-size:1rem;line-height:1.7;color:#4A2E3E;margin:0 0 10px;">Údaje zpracováváme za účelem vyřízení objednávky a doručení zakoupeného digitálního obsahu (plnění smlouvy), vedení účetnictví (zákonná povinnost) a — pouze s vaším souhlasem — pro marketingovou komunikaci a cílení reklamy (Meta Pixel).</p>
-<p style="font-size:1rem;line-height:1.7;color:#4A2E3E;margin:0;">Souhlas s marketingovým zpracováním můžete kdykoli odvolat v <a href="#" style="color:#B8336A;font-weight:700;">nastavení cookies</a> nebo napsáním na kontaktní e-mail.</p>
-</section>
-<section style="margin-bottom:32px;">
-<h2 style="font-family:'Baloo 2',sans-serif;font-weight:700;font-size:1.25rem;color:#B8336A;margin:0 0 12px;">4. Cookies</h2>
-<p style="font-size:1rem;line-height:1.7;color:#4A2E3E;margin:0;">Web používá nezbytné, analytické a marketingové cookies. Nezbytné cookies jsou aktivní vždy a zajišťují základní funkčnost e-shopu. Analytické a marketingové cookies (včetně Meta Pixelu) používáme pouze s vaším souhlasem, který můžete kdykoli změnit v nastavení cookies dostupném v patičce webu.</p>
-</section>
-<section style="margin-bottom:32px;">
-<h2 style="font-family:'Baloo 2',sans-serif;font-weight:700;font-size:1.25rem;color:#B8336A;margin:0 0 12px;">5. Předání údajů třetím stranám</h2>
-<p style="font-size:1rem;line-height:1.7;color:#4A2E3E;margin:0;">Pro zpracování plateb využíváme platební bránu SimpleShop. Pro odeslání e-mailů s odkazem ke stažení používáme [název e-mailového nástroje]. Tito zpracovatelé mají s námi uzavřenou smlouvu o zpracování osobních údajů a nesmí je použít k žádnému jinému účelu.</p>
-</section>
-<section style="margin-bottom:32px;">
-<h2 style="font-family:'Baloo 2',sans-serif;font-weight:700;font-size:1.25rem;color:#B8336A;margin:0 0 12px;">6. Doba uchování údajů</h2>
-<p style="font-size:1rem;line-height:1.7;color:#4A2E3E;margin:0;">Údaje z objednávek uchováváme po dobu vyžadovanou zákonem (zpravidla 10 let z účetních a daňových důvodů). Údaje zpracovávané na základě souhlasu uchováváme do jeho odvolání, nejdéle po dobu [X] let.</p>
-</section>
-<section style="margin-bottom:32px;">
-<h2 style="font-family:'Baloo 2',sans-serif;font-weight:700;font-size:1.25rem;color:#B8336A;margin:0 0 12px;">7. Vaše práva</h2>
-<p style="font-size:1rem;line-height:1.7;color:#4A2E3E;margin:0 0 10px;">V souladu s GDPR máte právo na:</p>
+<h2 style="font-family:'Baloo 2',sans-serif;font-weight:700;font-size:1.25rem;color:#B8336A;margin:0 0 12px;">IV. Příjemci a zpracovatelé osobních údajů</h2>
+<p style="font-size:1rem;line-height:1.7;color:#4A2E3E;margin:0 0 10px;">Správce při své činnosti využívá prověřené externí zpracovatele, kteří garantují vysokou míru zabezpečení dat. Osobní údaje nejsou předávány mimo země EU. Těmito zpracovateli jsou:</p>
 <ul style="font-size:1rem;line-height:1.8;color:#4A2E3E;margin:0;padding-left:20px;">
-<li>přístup ke svým osobním údajům,</li>
-<li>opravu nepřesných údajů,</li>
-<li>výmaz údajů („právo být zapomenut“),</li>
-<li>omezení zpracování,</li>
-<li>přenositelnost údajů,</li>
-<li>odvolání souhlasu se zpracováním,</li>
-<li>podání stížnosti u Úřadu pro ochranu osobních údajů (uoou.cz).</li>
+<li>Redbit s.r.o. (provozovatel systému SimpleShop – objednávkový a fakturační systém).</li>
+<li>Ecomail.cz s.r.o. / SmartSelling a.s. (SmartEmailing) (poskytovatel e-mailingového nástroje pro rozesílání newsletterů).</li>
+<li>Google LLC (nástroj Google Analytics pro anonymní analýzu návštěvnosti webu).</li>
+<li>Meta Platforms Ireland Ltd. (nástroj Meta Pixel pro analýzu efektivity online reklamy).</li>
 </ul>
 </section>
 <section>
-<h2 style="font-family:'Baloo 2',sans-serif;font-weight:700;font-size:1.25rem;color:#B8336A;margin:0 0 12px;">8. Kontakt</h2>
-<p style="font-size:1rem;line-height:1.7;color:#4A2E3E;margin:0;">Máte-li dotaz ke zpracování osobních údajů, napište na <a href="mailto:info@matematickevypravy.cz" style="color:#B8336A;font-weight:700;">[e-mail]</a>.</p>
+<h2 style="font-family:'Baloo 2',sans-serif;font-weight:700;font-size:1.25rem;color:#B8336A;margin:0 0 12px;">V. Práva subjektů údajů</h2>
+<p style="font-size:1rem;line-height:1.7;color:#4A2E3E;margin:0 0 10px;">Podle nařízení GDPR máte vůči Správci tato práva:</p>
+<ul style="font-size:1rem;line-height:1.8;color:#4A2E3E;margin:0 0 16px;padding-left:20px;">
+<li>Právo na přístup k osobním údajům a informace o jejich zpracování.</li>
+<li>Právo na opravu, doplnění nebo výmaz údajů („právo být zapomenut“).</li>
+<li>Právo na omezení zpracování a právo na přenositelnost údajů.</li>
+<li>Právo vznést námitku proti zpracování (zejména u marketingu na základě oprávněného zájmu).</li>
+<li>Právo kdykoliv odvolat souhlas se zpracováním na e-mailu: <a href="mailto:jitka@svetvyprav.cz" style="color:#B8336A;font-weight:700;">jitka@svetvyprav.cz</a>.</li>
+</ul>
+<p style="font-size:1rem;line-height:1.7;color:#4A2E3E;margin:0 0 16px;">Pokud se domníváte, že zpracování není v pořádku, máte právo podat stížnost u Úřadu pro ochranu osobních údajů (<a href="https://www.uoou.cz" style="color:#B8336A;font-weight:700;">www.uoou.cz</a>).</p>
+<p style="font-size:0.9rem;color:#8A7A6E;margin:0;">Tyto zásady jsou účinné ode dne 07. 07. 2026.</p>
 </section>
 </main>
 <footer style="background:#3D2244;padding:40px 24px;">
-<div style="max-width:760px;margin:0 auto;display:flex;justify-content:center;gap:24px;flex-wrap:wrap;">
+<div style="max-width:760px;margin:0 auto;">
+<div style="display:flex;justify-content:center;gap:24px;flex-wrap:wrap;margin-bottom:20px;">
 <a href="index.html" style="font-size:0.85rem;color:rgba(255,255,255,0.7);">Zpět na hlavní stránku</a>
 <a href="obchodni-podminky.html" style="font-size:0.85rem;color:rgba(255,255,255,0.7);">Obchodní podmínky</a>
-<a href="#" onclick="{{ openCookieSettings }}" style="font-size:0.85rem;color:rgba(255,255,255,0.7);">Nastavení cookies</a>
+<a href="#" onclick="openCookieSettings(event)" style="font-size:0.85rem;color:rgba(255,255,255,0.7);">Nastavení cookies</a>
+</div>
+<p style="text-align:center;font-size:0.75rem;color:rgba(255,255,255,0.35);margin:0;">© 2026 Jitka Podroužková · IČO 05936799 · Korunní 2569/108, 101 00 Praha 10</p>
 </div>
 </footer>
 
