@@ -64,26 +64,27 @@ body{margin:0;background:#FFF6EC;}
   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
   <!-- Cookie consent banner -->
-  <div id="cookie-banner" style="display:none;position:fixed;bottom:0;left:0;right:0;z-index:9999;background:#4A2E3E;color:#fff;padding:18px 24px;font-family:'Nunito',sans-serif;font-size:0.88rem;line-height:1.5;">
-    <div style="max-width:1100px;margin:0 auto;display:flex;flex-wrap:wrap;align-items:center;gap:12px;justify-content:space-between;">
-      <span style="flex:1;min-width:220px;">Používáme cookies pro nezbytný provoz webu, analytiku (Google Analytics) a marketing (Meta Pixel). <a href="gdpr.html" style="color:#F5A623;font-weight:700;">Více info</a></span>
-      <div style="display:flex;gap:10px;flex-shrink:0;flex-wrap:wrap;">
-        <button id="cookie-reject" style="background:transparent;border:1.5px solid rgba(255,255,255,0.4);color:#fff;font-family:inherit;font-weight:700;font-size:0.85rem;padding:9px 18px;border-radius:9999px;cursor:pointer;">Odmítnout vše</button>
-        <button id="cookie-show-prefs" style="background:transparent;border:1.5px solid rgba(255,255,255,0.4);color:#fff;font-family:inherit;font-weight:700;font-size:0.85rem;padding:9px 18px;border-radius:9999px;cursor:pointer;">Nastavit předvolby</button>
-        <button id="cookie-accept" style="background:#F5A623;border:none;color:#4A2E3E;font-family:inherit;font-weight:800;font-size:0.85rem;padding:9px 18px;border-radius:9999px;cursor:pointer;">Přijmout vše</button>
+  <div id="cookie-banner" style="display:none;position:fixed;bottom:20px;right:20px;left:auto;z-index:9999;width:360px;max-width:calc(100vw - 32px);background:#4A2E3E;color:#fff;padding:22px 22px 20px;border-radius:20px;box-shadow:0 20px 50px rgba(0,0,0,0.35);font-family:'Nunito',sans-serif;font-size:0.88rem;line-height:1.55;">
+    <p style="margin:0 0 8px;font-family:'Baloo 2',sans-serif;font-weight:700;font-size:1.05rem;color:#fff;">🍪 Vaše sušenky nesníme</p>
+    <p style="margin:0 0 18px;color:rgba(255,255,255,0.85);">Používáme je jen pro chod webu, měření návštěvnosti a chytřejší reklamu. Vy rozhodujete, které nám povolíte. <a href="gdpr.html" style="color:#F5A623;font-weight:700;">Více info</a></p>
+    <div style="display:flex;flex-direction:column;gap:8px;">
+      <button id="cookie-accept" style="background:#F5A623;border:none;color:#4A2E3E;font-family:inherit;font-weight:800;font-size:0.9rem;padding:11px 18px;border-radius:9999px;cursor:pointer;">✦ Ano, chci lepší web</button>
+      <div style="display:flex;gap:8px;">
+        <button id="cookie-show-prefs" style="flex:1;background:transparent;border:1.5px solid rgba(255,255,255,0.4);color:#fff;font-family:inherit;font-weight:700;font-size:0.8rem;padding:9px 10px;border-radius:9999px;cursor:pointer;">Vyladit si to</button>
+        <button id="cookie-reject" style="flex:1;background:transparent;border:1.5px solid rgba(255,255,255,0.4);color:#fff;font-family:inherit;font-weight:700;font-size:0.8rem;padding:9px 10px;border-radius:9999px;cursor:pointer;">Jen nezbytné</button>
       </div>
     </div>
-    <div id="cookie-prefs" style="display:none;max-width:1100px;margin:16px auto 0;padding-top:16px;border-top:1px solid rgba(255,255,255,0.15);flex-direction:column;gap:14px;">
-      <label style="display:flex;align-items:center;justify-content:space-between;gap:16px;">
-        <span><strong>Nezbytné</strong> — vždy aktivní, zajišťují základní funkčnost webu.</span>
+    <div id="cookie-prefs" style="display:none;margin-top:18px;padding-top:16px;border-top:1px solid rgba(255,255,255,0.15);flex-direction:column;gap:14px;">
+      <label style="display:flex;align-items:center;justify-content:space-between;gap:12px;">
+        <span><strong>Nezbytné</strong> — vždy aktivní, drží web pohromadě.</span>
         <input type="checkbox" checked disabled style="width:18px;height:18px;flex-shrink:0;">
       </label>
-      <label style="display:flex;align-items:center;justify-content:space-between;gap:16px;">
-        <span><strong>Analytika</strong> — Google Analytics, pomáhá nám chápat návštěvnost.</span>
+      <label style="display:flex;align-items:center;justify-content:space-between;gap:12px;">
+        <span><strong>Analytika</strong> — Google Analytics, ukáže nám, co vás na webu baví.</span>
         <input type="checkbox" id="cookie-analytics-toggle" style="width:18px;height:18px;flex-shrink:0;">
       </label>
-      <label style="display:flex;align-items:center;justify-content:space-between;gap:16px;">
-        <span><strong>Marketing</strong> — Meta Pixel, pro cílení a měření reklamy na Facebooku/Instagramu.</span>
+      <label style="display:flex;align-items:center;justify-content:space-between;gap:12px;">
+        <span><strong>Marketing</strong> — Meta Pixel, pro chytřejší reklamu na Facebooku/Instagramu.</span>
         <input type="checkbox" id="cookie-marketing-toggle" style="width:18px;height:18px;flex-shrink:0;">
       </label>
       <button id="cookie-save-prefs" style="align-self:flex-start;background:#F5A623;border:none;color:#4A2E3E;font-family:inherit;font-weight:800;font-size:0.85rem;padding:9px 20px;border-radius:9999px;cursor:pointer;">Uložit předvolby</button>
