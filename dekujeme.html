@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<meta name="robots" content="noindex,nofollow">
+<!-- ═══════════════════════════════════════════════════════════════
+     GOOGLE TAG MANAGER — GTM-56Z89R3H (stejný kontejner jako landing.html)
+     Consent mode v2: výchozí stav = odepřeno, dorovnává se uloženým
+     souhlasem z cookie lišty na landing.html (stejná doména → stejný localStorage).
+     ═══════════════════════════════════════════════════════════════ -->
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('consent', 'default', {
+    analytics_storage: 'denied',
+    ad_storage: 'denied',
+    ad_user_data: 'denied',
+    ad_personalization: 'denied',
+    wait_for_update: 500
+  });
+</script>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-56Z89R3H');</script>
+<!-- End Google Tag Manager -->
+<!-- Meta Pixel -->
+<script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('consent', 'revoke');
+  fbq('init', '1541113114212456');
+  fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none" alt=""
+  src="https://www.facebook.com/tr?id=1541113114212456&ev=PageView&noscript=1" /></noscript>
+<!-- End Meta Pixel -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Děkujeme za objednávku — Matematické výpravy</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&amp;family=Baloo+2:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
+<style>
+  body{margin:0;background:#FFF6EC;font-family:'Nunito',sans-serif;}
+  .wrap{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px;text-align:center;}
+  .card{max-width:520px;background:#fff;border-radius:24px;box-shadow:0 12px 32px rgba(74,46,62,0.12);padding:clamp(28px,5vw,48px);}
+  h1{font-family:'Baloo 2',sans-serif;font-weight:700;font-size:clamp(1.5rem,3vw,2rem);color:#4A2E3E;margin:0 0 14px;}
+  p{color:#7A6A5A;font-size:1rem;line-height:1.6;margin:0 0 10px;}
+  a.cta{display:inline-block;margin-top:18px;background:#F5A623;color:#4A2E3E;font-weight:800;padding:13px 28px;border-radius:9999px;text-decoration:none;}
+</style>
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-56Z89R3H"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<div class="wrap">
+  <div class="card">
+    <div style="font-size:2.6rem;margin-bottom:6px;">🎉</div>
+    <h1>Děkujeme za objednávku!</h1>
+    <p>Výprava už je na cestě do vaší e-mailové schránky. Pokud nedorazí do pár minut, mrkněte prosím i do spamu.</p>
+    <a class="cta" href="/">Zpět na web</a>
+  </div>
+</div>
+
+<script>
+  /* ═══ META CONVERSIONS API (CAPI) — server-side dedup s browser Pixelem ═══
+     Stejný helper jako na landing.html, page je samostatná (jiné načtení). */
+  var SvCapi = (function(){
+    var CONSENT_KEY = 'cookie_consent_v2';
+
+    function genEventId(){
+      if (window.crypto && crypto.randomUUID) return crypto.randomUUID();
+      return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c){
+        var r = Math.random() * 16 | 0, v = c === 'x' ? r : (r & 0x3 | 0x8);
+        return v.toString(16);
+      });
+    }
+
+    function getConsent(){
+      try { return JSON.parse(localStorage.getItem(CONSENT_KEY)); } catch (e) { return null; }
+    }
+
+    function hasMarketingConsent(){
+      var c = getConsent();
+      return !!(c && c.marketing);
+    }
+
+    function send(eventName, eventId, customData, extra){
+      if (!hasMarketingConsent()) return;
+      var payload = {
+        event_name: eventName,
+        event_id: eventId,
+        event_source_url: window.location.href,
+        consent: true,
+        custom_data: customData
+      };
+      if (extra && extra.email) payload.email = extra.email;
+      try {
+        fetch('/api/meta-event', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload),
+          keepalive: true
+        }).catch(function(){});
+      } catch (e) {}
+    }
+
+    return { genEventId: genEventId, getConsent: getConsent, hasMarketingConsent: hasMarketingConsent, send: send };
+  })();
+
+  /* Dorovnat consent mode + Pixel podle souhlasu uloženého na landing.html */
+  (function(){
+    var c = SvCapi.getConsent();
+    if (c) {
+      gtag('consent', 'update', {
+        analytics_storage: c.analytics ? 'granted' : 'denied',
+        ad_storage: c.marketing ? 'granted' : 'denied',
+        ad_user_data: c.marketing ? 'granted' : 'denied',
+        ad_personalization: c.marketing ? 'granted' : 'denied'
+      });
+      if (typeof fbq === 'function') fbq('consent', c.marketing ? 'grant' : 'revoke');
+    }
+  })();
+
+  /* ═══ PURCHASE ═══
+     Produkt/hodnota čteme z query stringu, který nastavíš jako "Return URL" /
+     "URL po zaplacení" v administraci SimpleShop pro každý formulář, např.:
+       https://svetvyprav.cz/dekujeme?p=pirati
+       https://svetvyprav.cz/dekujeme?p=jednorozci
+       https://svetvyprav.cz/dekujeme?p=balicek
+     Pokud SimpleShop umí do return URL vložit placeholdery pro ID objednávky
+     a e-mail zákazníka, přidej je jako &order_id={id}&email={email} — zlepší
+     to Event Match Quality (a řešení funguje i bez nich, jen s nižším skóre).
+     Bez query parametru p se produkt dohledá z poslední volby na landing.html
+     (sessionStorage), fallback je balíček. */
+  (function(){
+    var PRODUCTS = {
+      pirati:     { id: 'pirati',     name: 'Pirátská výprava',      price: 179 },
+      jednorozci: { id: 'jednorozci', name: 'Jednorožčí výprava',    price: 179 },
+      balicek:    { id: 'balicek',    name: 'Obě výpravy (balíček)', price: 299 }
+    };
+    var params = new URLSearchParams(window.location.search);
+    var productKey = params.get('p');
+    if (!productKey || !PRODUCTS[productKey]) {
+      try { productKey = sessionStorage.getItem('sv_selected_product'); } catch (e) {}
+    }
+    if (!productKey || !PRODUCTS[productKey]) productKey = 'balicek';
+    var product = PRODUCTS[productKey];
+
+    var value = Number(params.get('value')) || product.price;
+    var orderId = params.get('order_id') || params.get('vs') || null;
+    var email = params.get('email') || undefined;
+
+    var guardKey = 'sv_purchase_sent_' + (orderId || productKey);
+    var alreadySent = false;
+    try { alreadySent = sessionStorage.getItem(guardKey) === '1'; } catch (e) {}
+    if (alreadySent) return;
+
+    var eventIdKey = 'sv_purchase_event_id_' + (orderId || productKey);
+    var eventId;
+    try { eventId = sessionStorage.getItem(eventIdKey); } catch (e) {}
+    if (!eventId) {
+      eventId = orderId ? ('order_' + orderId) : SvCapi.genEventId();
+      try { sessionStorage.setItem(eventIdKey, eventId); } catch (e) {}
+    }
+
+    dataLayer.push({
+      event: 'purchase',
+      ecommerce: {
+        currency: 'CZK', value: value, transaction_id: orderId || eventId,
+        items: [{ item_id: product.id, item_name: product.name, price: value, quantity: 1 }]
+      }
+    });
+
+    if (typeof fbq === 'function') {
+      fbq('track', 'Purchase', {
+        value: value, currency: 'CZK', content_ids: [product.id],
+        content_type: 'product', content_name: product.name
+      }, { eventID: eventId });
+    }
+
+    SvCapi.send('Purchase', eventId, {
+      value: value, currency: 'CZK', content_ids: [product.id], content_name: product.name
+    }, { email: email });
+
+    try { sessionStorage.setItem(guardKey, '1'); } catch (e) {}
+  })();
+</script>
+</body>
+</html>

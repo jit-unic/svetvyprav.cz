@@ -494,6 +494,49 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </div>
 
 <script>
+  /* ═══ META CONVERSIONS API (CAPI) — server-side dedup s browser Pixelem ═══ */
+  var SvCapi = (function(){
+    var CONSENT_KEY = 'cookie_consent_v2';
+
+    function genEventId(){
+      if (window.crypto && crypto.randomUUID) return crypto.randomUUID();
+      return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c){
+        var r = Math.random() * 16 | 0, v = c === 'x' ? r : (r & 0x3 | 0x8);
+        return v.toString(16);
+      });
+    }
+
+    function hasMarketingConsent(){
+      try {
+        var c = JSON.parse(localStorage.getItem(CONSENT_KEY));
+        return !!(c && c.marketing);
+      } catch (e) { return false; }
+    }
+
+    function send(eventName, eventId, customData, extra){
+      if (!hasMarketingConsent()) return;
+      var payload = {
+        event_name: eventName,
+        event_id: eventId,
+        event_source_url: window.location.href,
+        consent: true,
+        custom_data: customData
+      };
+      if (extra && extra.email) payload.email = extra.email;
+      if (extra && extra.fbclid) payload.fbclid = extra.fbclid;
+      try {
+        fetch('/api/meta-event', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload),
+          keepalive: true
+        }).catch(function(){});
+      } catch (e) {}
+    }
+
+    return { genEventId: genEventId, send: send, hasMarketingConsent: hasMarketingConsent };
+  })();
+
   /* ═══ COOKIE CONSENT ═══ */
   (function(){
     var STORAGE_KEY = 'cookie_consent_v2';
@@ -569,7 +612,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         ecommerce: { currency: 'CZK', value: PRODUCTS[id].price,
           items: [{ item_id: id, item_name: PRODUCTS[id].name, price: PRODUCTS[id].price, quantity: 1 }] }
       });
-      if (typeof fbq === 'function') fbq('track', 'InitiateCheckout', { value: PRODUCTS[id].price, currency: 'CZK', content_name: PRODUCTS[id].name });
+      var icEventId = SvCapi.genEventId();
+      if (typeof fbq === 'function') {
+        fbq('track', 'InitiateCheckout', { value: PRODUCTS[id].price, currency: 'CZK', content_name: PRODUCTS[id].name, content_ids: [id] }, { eventID: icEventId });
+      }
+      SvCapi.send('InitiateCheckout', icEventId, {
+        value: PRODUCTS[id].price, currency: 'CZK', content_ids: [id], content_name: PRODUCTS[id].name
+      });
+      try { sessionStorage.setItem('sv_selected_product', id); } catch (e) {}
     }
   }
 

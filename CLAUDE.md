@@ -40,6 +40,8 @@ Do `<head>` každé stránky: `og:title`, `og:description`, `og:image` (hero), `
 ### 3. Measurement
 GA4 nebo **Plausible** (lehčí, GDPR-friendly) snippet do `<head>`.
 
+**Meta Conversions API (CAPI)** — hotovo, viz [README_CAPI.md](README_CAPI.md). Zbývá jen nastavit env proměnné ve Vercelu a Return URL formulářů v SimpleShopu (popsáno tam).
+
 ### 4. Cookie banner
 Lehký GDPR banner (Cookiebot free / vlastní), navázaný na měření z bodu 3.
 
