@@ -49,9 +49,13 @@
   @keyframes twinkle { 0%,100%{opacity:0.35;transform:scale(0.9);} 50%{opacity:1;transform:scale(1.15);} }
   @keyframes drift { 0%,100%{transform:translateX(0);} 50%{transform:translateX(18px);} }
   @keyframes glowpulse { 0%,100%{box-shadow:0 0 0 0 rgba(245,166,35,0.35);} 50%{box-shadow:0 0 0 10px rgba(245,166,35,0);} }
-  body{margin:0;background:#FFF6EC;}
+  html{overflow-x:hidden;}
+  body{margin:0;background:#FFF6EC;overflow-x:hidden;}
   details summary::-webkit-details-marker{display:none}
   details summary{list-style:none}
+  @media (max-width:820px){
+    .hide-mobile{display:none !important;}
+  }
 
 </style>
   <meta property="og:type" content="website">
@@ -71,24 +75,15 @@
   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
   <!-- Cookie consent banner -->
-  <div id="cookie-banner" style="display:none;position:fixed;bottom:20px;right:20px;left:auto;z-index:9999;width:360px;max-width:calc(100vw - 32px);background:#4A2E3E;color:#fff;padding:22px 22px 20px;border-radius:20px;box-shadow:0 20px 50px rgba(0,0,0,0.35);font-family:'Nunito',sans-serif;font-size:0.88rem;line-height:1.55;">
-    <p style="margin:0 0 8px;font-family:'Baloo 2',sans-serif;font-weight:700;font-size:1.05rem;color:#fff;">🍪 Vaše sušenky nesníme</p>
+  <div id="cookie-banner" style="display:none;position:fixed;bottom:20px;left:16px;right:16px;margin:0 auto;z-index:9999;max-width:380px;max-height:calc(100vh - 40px);overflow-y:auto;background:#4A2E3E;color:#fff;padding:24px 24px 20px;border-radius:20px;box-shadow:0 20px 50px rgba(0,0,0,0.35);font-family:'Nunito',sans-serif;font-size:0.88rem;line-height:1.55;">
+    <p style="margin:0 0 8px;font-family:'Baloo 2',sans-serif;font-weight:700;font-size:1.1rem;color:#fff;">🍪 Vaše sušenky nesníme</p>
     <p style="margin:0 0 18px;color:rgba(255,255,255,0.85);">Používáme je jen pro chod webu, měření návštěvnosti a chytřejší reklamu. Vy rozhodujete, které nám povolíte. <a href="gdpr" style="color:#F5A623;font-weight:700;">Více info</a></p>
-    <div style="display:flex;flex-direction:column;gap:14px;">
-      <div>
-        <button id="cookie-accept" style="width:100%;background:#F5A623;border:none;color:#4A2E3E;font-family:inherit;font-weight:800;font-size:0.9rem;padding:11px 18px;border-radius:9999px;cursor:pointer;">🍪 Přijmout všechny</button>
-        <p style="margin:6px 4px 0;font-size:0.75rem;color:rgba(255,255,255,0.6);">Zapne web, analytiku i personalizovanou reklamu (Google Analytics, Meta Pixel).</p>
-      </div>
-      <div>
-        <button id="cookie-show-prefs" style="width:100%;background:transparent;border:1.5px solid rgba(255,255,255,0.4);color:#fff;font-family:inherit;font-weight:700;font-size:0.85rem;padding:9px 10px;border-radius:9999px;cursor:pointer;">Vyladit si to</button>
-        <p style="margin:6px 4px 0;font-size:0.75rem;color:rgba(255,255,255,0.6);">Vyberete si zvlášť analytiku a reklamu.</p>
-      </div>
-      <div>
-        <button id="cookie-reject" style="width:100%;background:transparent;border:1.5px solid rgba(255,255,255,0.4);color:#fff;font-family:inherit;font-weight:700;font-size:0.85rem;padding:9px 10px;border-radius:9999px;cursor:pointer;">Jen nezbytné</button>
-        <p style="margin:6px 4px 0;font-size:0.75rem;color:rgba(255,255,255,0.6);">Web pojede jen na nutném minimu, bez měření a reklamy.</p>
-      </div>
+    <div style="display:flex;gap:10px;">
+      <button id="cookie-reject" style="flex:1;min-width:0;background:transparent;border:2px solid rgba(255,255,255,0.6);color:#fff;font-family:inherit;font-weight:800;font-size:0.92rem;padding:13px 10px;border-radius:9999px;cursor:pointer;">Odmítnout</button>
+      <button id="cookie-accept" style="flex:1;min-width:0;background:#F5A623;border:2px solid #F5A623;color:#4A2E3E;font-family:inherit;font-weight:800;font-size:0.92rem;padding:13px 10px;border-radius:9999px;cursor:pointer;">Přijmout vše</button>
     </div>
-    <div id="cookie-prefs" style="display:none;margin-top:18px;padding-top:16px;border-top:1px solid rgba(255,255,255,0.15);flex-direction:column;gap:14px;">
+    <button id="cookie-show-prefs" style="display:block;margin:12px auto 0;background:none;border:none;color:rgba(255,255,255,0.75);font-family:inherit;font-weight:700;font-size:0.82rem;text-decoration:underline;cursor:pointer;">Vyladit si to</button>
+    <div id="cookie-prefs" style="display:none;margin-top:16px;padding-top:16px;border-top:1px solid rgba(255,255,255,0.15);flex-direction:column;gap:14px;">
       <label style="display:flex;align-items:center;justify-content:space-between;gap:12px;">
         <span><strong>Nezbytné</strong> — vždy aktivní, drží web pohromadě.</span>
         <input type="checkbox" checked disabled style="width:18px;height:18px;flex-shrink:0;">
@@ -173,10 +168,10 @@
 <span style="color:#F5A623;">✦</span> Matematické výpravy
     </a>
 <div style="display:flex;align-items:center;gap:28px;flex-wrap:wrap;">
-<a href="#jak-to-funguje" style="font-weight:600;font-size:0.92rem;color:#6B5A4A;">Jak to funguje</a>
-<a href="#ukazka" style="font-weight:600;font-size:0.92rem;color:#6B5A4A;">Ukázka</a>
-<a href="#o-mne" style="font-weight:600;font-size:0.92rem;color:#6B5A4A;">O autorce</a>
-<a href="#faq" style="font-weight:600;font-size:0.92rem;color:#6B5A4A;">FAQ</a>
+<a href="#jak-to-funguje" class="hide-mobile" style="font-weight:600;font-size:0.92rem;color:#6B5A4A;">Jak to funguje</a>
+<a href="#ukazka" class="hide-mobile" style="font-weight:600;font-size:0.92rem;color:#6B5A4A;">Ukázka</a>
+<a href="#o-mne" class="hide-mobile" style="font-weight:600;font-size:0.92rem;color:#6B5A4A;">O autorce</a>
+<a href="#faq" class="hide-mobile" style="font-weight:600;font-size:0.92rem;color:#6B5A4A;">FAQ</a>
 <a href="#vyber" style="background:#F5A623;color:#4A2E3E;font-weight:800;font-size:0.88rem;padding:11px 22px;border-radius:9999px;box-shadow:0 4px 14px rgba(245,166,35,0.35);white-space:nowrap;">Vybrat výpravu</a>
 </div>
 </div>
