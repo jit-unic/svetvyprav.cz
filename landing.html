@@ -294,7 +294,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </div>
 <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;align-items:stretch;">
 <!-- PIRÁTI -->
-<div style="background:#fff;border-radius:24px;box-shadow:0 8px 24px rgba(15,124,110,0.17);overflow:hidden;display:flex;flex-direction:column;">
+<div data-product-card="pirati" style="background:#fff;border-radius:24px;box-shadow:0 8px 24px rgba(15,124,110,0.17);overflow:hidden;display:flex;flex-direction:column;">
 <div style="position:relative;background:linear-gradient(180deg,#9BE8D6 0%,#3FBFA6 60%,#0E7A6E 100%);display:flex;align-items:center;justify-content:center;padding:24px 24px 30px;overflow:hidden;">
 <span style="position:absolute;left:10%;top:12px;color:#fff;opacity:0.85;font-size:0.8rem;animation:twinkle 3.5s ease-in-out infinite;">✦</span>
 <img alt="Pirátská matematická výprava" src="assets/pirati-hero.jpg" style="width:64%;border-radius:10px;box-shadow:0 13px 27px rgba(6,50,45,0.4);"/>
@@ -311,7 +311,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </div>
 </div>
 <!-- BALÍČEK -->
-<div style="border-radius:26px;padding:3px;background:linear-gradient(135deg,#3FBFA6 0%,#F5A623 33%,#FF6F5E 66%,#F27BAA 100%);box-shadow:0 18px 45px rgba(245,166,35,0.29);">
+<div data-product-card="balicek" style="border-radius:26px;padding:3px;background:linear-gradient(135deg,#3FBFA6 0%,#F5A623 33%,#FF6F5E 66%,#F27BAA 100%);box-shadow:0 18px 45px rgba(245,166,35,0.29);">
 <div style="background:#fff;border-radius:23px;overflow:hidden;display:flex;flex-direction:column;height:100%;">
 <div style="background:linear-gradient(90deg,#F5A623,#FF6F5E,#F27BAA);color:#fff;text-align:center;font-weight:800;font-size:0.75rem;letter-spacing:0.1em;text-transform:uppercase;padding:9px;">✦ Nejoblíbenější · ušetříte 59 Kč ✦</div>
 <div style="position:relative;background:linear-gradient(120deg,#9BE8D6 0%,#FFE9C2 45%,#FFD9E8 100%);display:flex;align-items:center;justify-content:center;padding:24px;overflow:hidden;">
@@ -333,7 +333,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </div>
 </div>
 <!-- JEDNOROŽCI -->
-<div style="background:#fff;border-radius:24px;box-shadow:0 8px 24px rgba(184,51,106,0.17);overflow:hidden;display:flex;flex-direction:column;">
+<div data-product-card="jednorozci" style="background:#fff;border-radius:24px;box-shadow:0 8px 24px rgba(184,51,106,0.17);overflow:hidden;display:flex;flex-direction:column;">
 <div style="position:relative;background:linear-gradient(180deg,#FFD9E8 0%,#F5A8CE 55%,#D9A8F0 100%);display:flex;align-items:center;justify-content:center;padding:24px 24px 30px;overflow:hidden;">
 <span style="position:absolute;right:12%;top:14px;color:#9B3F8C;font-size:0.85rem;animation:twinkle 3.8s ease-in-out infinite;">✦</span>
 <img alt="Jednorožčí matematická výprava" src="assets/jednorozci-hero.jpg" style="width:64%;border-radius:10px;box-shadow:0 13px 27px rgba(120,30,80,0.32);"/>
@@ -633,6 +633,37 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   function trackCta(place){
     dataLayer.push({ event: 'cta_click', cta_place: place });
   }
+
+  /* ═══ META VIEWCONTENT — IntersectionObserver na produktové karty v ceníku ═══ */
+  (function(){
+    var firedFor = new Set(); // max 1x za page load na produkt, jen v paměti (nepřežívá reload)
+    var cards = document.querySelectorAll('[data-product-card]');
+    if (!('IntersectionObserver' in window) || !cards.length) return;
+
+    var observer = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if (!entry.isIntersecting) return;
+        var id = entry.target.getAttribute('data-product-card');
+        if (!id || firedFor.has(id) || !PRODUCTS[id]) return;
+        firedFor.add(id);
+        observer.unobserve(entry.target);
+
+        var vcEventId = SvCapi.genEventId();
+        if (typeof fbq === 'function') {
+          fbq('track', 'ViewContent', {
+            value: PRODUCTS[id].price, currency: 'CZK',
+            content_type: 'product', content_name: PRODUCTS[id].name, content_ids: [id]
+          }, { eventID: vcEventId });
+        }
+        SvCapi.send('ViewContent', vcEventId, {
+          value: PRODUCTS[id].price, currency: 'CZK',
+          content_type: 'product', content_ids: [id], content_name: PRODUCTS[id].name
+        });
+      });
+    }, { threshold: 0.5 });
+
+    cards.forEach(function(card){ observer.observe(card); });
+  })();
 
   /* view_item_list při načtení */
   dataLayer.push({

@@ -16,7 +16,7 @@ const crypto = require('crypto');
 
 const GRAPH_API_VERSION = 'v21.0';
 
-const ALLOWED_EVENTS = new Set(['Purchase', 'InitiateCheckout']);
+const ALLOWED_EVENTS = new Set(['Purchase', 'InitiateCheckout', 'ViewContent']);
 
 // SHA-256 hash dle požadavků Mety: lowercase, trim, hex
 function hash(value) {
