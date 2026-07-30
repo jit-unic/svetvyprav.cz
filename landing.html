@@ -92,6 +92,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   @media (max-width:480px){
     .promo-countdown{display:none;}
   }
+  #sample-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px;}
+  .sample-card{cursor:zoom-in;background:#fff;border-radius:16px;padding:8px;box-shadow:0 8px 22px rgba(74,46,62,0.14);}
+  .sample-swipe-hint{display:none;}
+  @media (max-width:720px){
+    #sample-grid{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;gap:14px;padding:4px 24px 14px;margin:0 -24px;scrollbar-width:none;}
+    #sample-grid::-webkit-scrollbar{display:none;}
+    .sample-card{flex:0 0 58%;max-width:230px;scroll-snap-align:center;}
+    .sample-swipe-hint{display:block;text-align:center;font-size:0.8rem;color:#A8907A;margin:10px 0 0;}
+  }
 </style>
 </head>
 <body>
@@ -277,6 +286,45 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </div>
 </section>
 <!-- /BLOCK: whats-included -->
+
+<!-- BLOCK: sample-gallery -->
+<!-- ═══ UKÁZKA STRÁNEK ═══ -->
+<section id="ukazka" style="background:linear-gradient(170deg,#FFF6EC 0%,#FFE9C2 100%);padding:88px 24px;">
+<div style="max-width:1080px;margin:0 auto;">
+<div style="text-align:center;margin-bottom:40px;">
+<div style="display:inline-flex;align-items:center;gap:6px;font-weight:800;font-size:0.75rem;letter-spacing:0.1em;text-transform:uppercase;color:#0E7A6E;margin-bottom:12px;"><span style="color:#F5A623;">✦</span> Žádné mockupy — skutečné stránky z PDF</div>
+<h2 style="font-family:'Baloo 2',sans-serif;font-weight:700;font-size:clamp(1.7rem,3.2vw,2.3rem);line-height:1.25;color:#B8336A;margin:0 0 12px;">Nahlédněte dovnitř výpravy</h2>
+<p style="font-size:1.02rem;color:#6B5A4A;max-width:520px;margin:0 auto;line-height:1.6;">Ukázky z pirátské verze — jednorožčí výprava má úplně stejné úkoly, jen jiný příběh a grafiku. Klikněte na stránku pro zvětšení.</p>
+</div>
+<div id="sample-grid">
+<div class="sample-card" onclick="openSample('assets/ukazka-scitani.jpg')">
+<img alt="Ukázka listu — Sčítání do 100" src="assets/ukazka-scitani.jpg" loading="lazy" style="width:100%;border-radius:10px;display:block;"/>
+<p style="text-align:center;font-size:0.82rem;font-weight:700;color:#6B5A4A;margin:8px 0 4px;">Sčítání do 100</p>
+</div>
+<div class="sample-card" onclick="openSample('assets/ukazka-slovni-ulohy.jpg')">
+<img alt="Ukázka listu — Slovní úlohy" src="assets/ukazka-slovni-ulohy.jpg" loading="lazy" style="width:100%;border-radius:10px;display:block;"/>
+<p style="text-align:center;font-size:0.82rem;font-weight:700;color:#6B5A4A;margin:8px 0 4px;">Slovní úlohy</p>
+</div>
+<div class="sample-card" onclick="openSample('assets/ukazka-deleni.jpg')">
+<img alt="Ukázka listu — Dělení číslem 2" src="assets/ukazka-deleni.jpg" loading="lazy" style="width:100%;border-radius:10px;display:block;"/>
+<p style="text-align:center;font-size:0.82rem;font-weight:700;color:#6B5A4A;margin:8px 0 4px;">Dělení</p>
+</div>
+<div class="sample-card" onclick="openSample('assets/ukazka-mapa-pokladu.jpg')">
+<img alt="Ukázka — Mapa pokladu" src="assets/ukazka-mapa-pokladu.jpg" loading="lazy" style="width:100%;border-radius:10px;display:block;"/>
+<p style="text-align:center;font-size:0.82rem;font-weight:700;color:#6B5A4A;margin:8px 0 4px;">Mapa pokladu</p>
+</div>
+<div class="sample-card" onclick="openSample('assets/ukazka-diplom.jpg')">
+<img alt="Ukázka — Diplom" src="assets/ukazka-diplom.jpg" loading="lazy" style="width:100%;border-radius:10px;display:block;"/>
+<p style="text-align:center;font-size:0.82rem;font-weight:700;color:#6B5A4A;margin:8px 0 4px;">Diplom na konci</p>
+</div>
+</div>
+<p class="sample-swipe-hint">← posunujte prstem →</p>
+<p style="text-align:center;margin-top:36px;">
+<a href="#cenik" onclick="trackCta('ukazka')" style="display:inline-flex;background:#F5A623;color:#4A2E3E;font-weight:800;font-size:1rem;padding:15px 32px;border-radius:9999px;box-shadow:0 8px 22px rgba(245,166,35,0.4);">Chci celou výpravu ↓</a>
+</p>
+</div>
+</section>
+<!-- /BLOCK: sample-gallery -->
 
 <!-- BLOCK: value-comparison -->
 <!-- ═══ SROVNÁNÍ HODNOTY ═══ -->
@@ -551,6 +599,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </div>
 <!-- /BLOCK: sticky-cta -->
 
+<!-- BLOCK: sample-lightbox -->
+<!-- ═══ LIGHTBOX PRO UKÁZKY LISTŮ ═══ -->
+<div id="sample-lightbox" onclick="closeSample()" style="display:none;position:fixed;inset:0;z-index:1000;background:rgba(30,15,20,0.86);align-items:center;justify-content:center;padding:24px;cursor:zoom-out;">
+<img id="sample-lightbox-img" src="" alt="Zvětšená ukázka listu" style="max-width:min(92vw,520px);max-height:90vh;border-radius:12px;box-shadow:0 20px 60px rgba(0,0,0,0.5);"/>
+</div>
+<!-- /BLOCK: sample-lightbox -->
+
 <!-- BLOCK: scripts -->
 <script>
   /* ═══ META CONVERSIONS API (CAPI) — server-side dedup s browser Pixelem ═══ */
@@ -694,6 +749,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   function trackCta(place){
     dataLayer.push({ event: 'cta_click', cta_place: place });
+  }
+
+  function openSample(src){
+    document.getElementById('sample-lightbox-img').src = src;
+    document.getElementById('sample-lightbox').style.display = 'flex';
+    dataLayer.push({ event: 'view_sample', sample_src: src });
+  }
+
+  function closeSample(){
+    document.getElementById('sample-lightbox').style.display = 'none';
   }
 
   /* ═══ META VIEWCONTENT — IntersectionObserver na produktové karty v ceníku ═══ */
