@@ -753,6 +753,24 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     dataLayer.push({ event: 'cta_click', cta_place: place });
   }
 
+  /* ═══ ČESKÁ TYPOGRAFIE — pevné mezery za jednopísmennými předložkami a před Kč ═══ */
+  (function(){
+    var walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, {
+      acceptNode: function(n){
+        var t = n.parentNode.nodeName;
+        if (t === 'SCRIPT' || t === 'STYLE') return NodeFilter.FILTER_REJECT;
+        return NodeFilter.FILTER_ACCEPT;
+      }
+    });
+    var nodes = [];
+    while (walker.nextNode()) nodes.push(walker.currentNode);
+    nodes.forEach(function(n){
+      n.nodeValue = n.nodeValue
+        .replace(/(^|[\s(„\u00A0])([KkSsVvZzOoUuAaIi]) +/g, '$1$2\u00A0')
+        .replace(/(\d) +(Kč)/g, '$1\u00A0$2');
+    });
+  })();
+
   function openSample(src){
     document.getElementById('sample-lightbox-img').src = src;
     document.getElementById('sample-lightbox').style.display = 'flex';
