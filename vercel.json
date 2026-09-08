@@ -1,4 +1,8 @@
 {
   "cleanUrls": true,
-  "trailingSlash": false
+  "trailingSlash": false,
+  "redirects": [
+    { "source": "/", "destination": "/2-trida", "permanent": true },
+    { "source": "/landing", "destination": "/2-trida", "permanent": true }
+  ]
 }
