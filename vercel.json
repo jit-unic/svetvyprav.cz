@@ -2,12 +2,6 @@
   "cleanUrls": true,
   "trailingSlash": false,
   "redirects": [
-    {
-      "source": "/:path*",
-      "has": [{ "type": "host", "value": "www.svetvyprav.cz" }],
-      "destination": "https://svetvyprav.cz/:path*",
-      "permanent": true
-    },
     { "source": "/", "destination": "/2-trida", "permanent": true },
     { "source": "/landing", "destination": "/2-trida", "permanent": true }
   ]
