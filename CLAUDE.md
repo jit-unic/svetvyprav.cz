@@ -13,9 +13,9 @@ Dvě varianty: **piráti** / **jednorožci**, stejná matematika, jiné dobrodru
 | Soubor | Účel |
 |---|---|
 | `index.html` | Homepage (hero, výběr, jak to funguje, FAQ, CTA) |
-| `pirati.html` | Produkt: Pirátská výprava — 179 Kč |
-| `jednorozci.html` | Produkt: Jednorožčí výprava — 179 Kč |
-| `balicek.html` | Produkt: obě výpravy — 299 Kč |
+| `pirati.html` | Produkt: Pirátská výprava — 299 Kč |
+| `jednorozci.html` | Produkt: Jednorožčí výprava — 299 Kč |
+| `balicek.html` | Produkt: obě výpravy — 449 Kč (místo 598 Kč) |
 | `gdpr.html` | Ochrana osobních údajů |
 | `obchodni-podminky.html` | Obchodní podmínky |
 | `assets/` | Hero obrázky (PNG) |

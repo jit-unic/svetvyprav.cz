@@ -13,9 +13,9 @@ Soubory:
 
 **1) Napoj SimpleShop na nákupní tlačítka.**
 Ve 3 souborech je placeholder `href="#objednat"`. Nahraď plnou SimpleShop URL:
-- `pirati.html` → `#objednat` → SimpleShop odkaz na pirátskou výpravu (179 Kč)
-- `jednorozci.html` → `#objednat` → jednorožčí výprava (179 Kč)
-- `balicek.html` → `#objednat` → balíček obě (299 Kč)
+- `pirati.html` → `#objednat` → SimpleShop odkaz na pirátskou výpravu (299 Kč)
+- `jednorozci.html` → `#objednat` → jednorožčí výprava (299 Kč)
+- `balicek.html` → `#objednat` → balíček obě (449 Kč místo 598 Kč)
 
 (Homepage tlačítka vedou správně na produktové stránky — ty neřeš.)
 
