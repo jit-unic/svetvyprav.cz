@@ -70,7 +70,7 @@ trackingu, ne automatické převzetí ze stávajících produktů).
 
 - Piráti/jednorožci jako světy, hero obrázky (`pirati-hero.jpg`, `jednorozci-hero.jpg`) —
   Fáze 0 rozhodnutí: světy zůstávají stejné napříč ročníky i předměty.
-- Ceny (299 / 449 / 598 Kč), struktura balíčku, garance 14 dní, GTM/Pixel ID (celoweb).
+- Ceny (199 / 299 / 398 Kč), struktura balíčku, garance 14 dní, GTM/Pixel ID (celoweb).
 
 ## Co NEJDE templatovat — obsahová práce navíc (Fáze 2 — vyplňuje Jitka)
 
