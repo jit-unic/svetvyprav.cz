@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="cs">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Můj AI Chief of Staff</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230E6E66'/%3E%3Ctext x='16' y='22' font-size='16' text-anchor='middle' fill='white' font-family='sans-serif'%3E✦%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="app.css">
+</head>
+<body>
+  <div class="layout">
+    <nav class="nav" aria-label="Hlavní menu">
+      <div class="brand"><span class="brand-mark">✦</span><span class="brand-text">Můj AI Chief of Staff</span></div>
+      <a href="#dnes" data-route="dnes"><span class="ico">☀</span><span>Dnes</span></a>
+      <a href="#projekty" data-route="projekty"><span class="ico">▦</span><span>Projekty</span></a>
+      <a href="#ukoly" data-route="ukoly"><span class="ico">✓</span><span>Úkoly</span></a>
+      <a href="#schuzky" data-route="schuzky"><span class="ico">◷</span><span>Schůzky</span></a>
+      <a href="#rozhodnuti" data-route="rozhodnuti"><span class="ico">⚑</span><span>Rozhodnutí</span></a>
+      <a href="#kouc" data-route="kouc"><span class="ico">✦</span><span>AI kouč</span></a>
+      <a href="#nastaveni" data-route="nastaveni" class="nav-settings"><span class="ico">⚙</span><span>Nastavení</span></a>
+      <div class="ai-status" id="aiStatus"></div>
+    </nav>
+    <div class="main-wrap">
+      <header class="mobile-top"><span class="brand-mark">✦</span><strong>Chief of Staff</strong><a href="#nastaveni" class="mobile-gear" aria-label="Nastavení">⚙</a></header>
+      <main id="view" tabindex="-1"></main>
+    </div>
+  </div>
+  <div id="modal" class="modal" hidden></div>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script src="app.js"></script>
+</body>
+</html>

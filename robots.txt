@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /chief-of-staff/
 
 Sitemap: https://svetvyprav.cz/sitemap.xml

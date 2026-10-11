@@ -1,0 +1,8 @@
+{
+  "name": "svetvyprav",
+  "private": true,
+  "description": "Statický web + serverové funkce (api/). Bez build kroku.",
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.133.0"
+  }
+}
